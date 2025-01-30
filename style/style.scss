@@ -1,0 +1,120 @@
+@import "vars";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+p {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+}
+
+button {
+    color: $btn-text-color;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    border-radius: 60px;
+    background: $btn-background-color;
+    padding: 16px 28px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.main {
+    background-color: $main-background-color;
+    background-image: 
+        url("../img/stars/main-star-1.svg"), 
+        url("../img/stars/main-star-2.svg"),
+        url("../img/stars/main-star-3.svg");
+    background-repeat: no-repeat;
+    background-position:
+        100% 0,
+        27.97px 770px,
+        45.18px 822px;
+}
+
+.description {
+    margin-bottom: 72px;
+
+    .about__title {
+        color: $h1-color-main;
+        margin-bottom: 24px;
+    }
+
+    .about__text {
+        max-width: 788px;
+        font-weight: 300;
+        color: $paragraph-color-main;
+    }
+}
+
+.about__content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+
+    .about__item {
+        position: relative;
+        height: 100%;
+        grid-column: span 4;
+        border-radius: 30px;
+        background-color: #fff;
+    }
+}
+
+.img-conteiner::before {
+    content: "✊";
+    position: absolute;
+    top: 21%; //115
+    left: 39%; //150
+    font-family: Montserrat;
+    font-size: 81.173px;
+    font-weight: 800;
+    line-height: 110%; /* 89.291px */
+    rotate: 11.043deg;
+}
+
+.item__game {
+    padding: 32px 32px 36px 32px;
+
+    .item__game-number {
+        color: $paragraph-color-game-item;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 110%;
+        width: 80px;
+        padding: 8px 16px 10px 16px;
+        border-radius: 52.582px;
+        background: #f7f7f7;
+    }
+
+    .item__game-name {
+        margin-top: 16px;
+        color: $h3-color-main;
+    }
+}
