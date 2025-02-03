@@ -1,7 +1,7 @@
 //ex1
-// let a = 10;
-// a = 20;
-// alert(a);
+let a = 10;
+a = 20;
+alert(a);
 
 //ex2
 const iphoneRelease = 2007;
@@ -29,15 +29,15 @@ alert(
 );
 
 //ex5
-// let powFive = 2**5
-// const result = powFive;
-// alert(result)
+let powFive = 2**5
+const result = powFive;
+alert(result)
 
 //ex6
-const a = 9;
+const nine = 9;
 const b = 2;
-const result = a % b;
-alert(result);
+const result1 = nine % b;
+alert(result1);
 
 //ex7
 let num = 1;
