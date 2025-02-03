@@ -5,14 +5,28 @@
     padding: 0;
 }
 
+@for $i from 1 through 5 {
+    .top_bg-star-mob-#{$i} {
+        display: none;
+    }
+}
+
+body,
+button {
+    font-family: Montserrat, sans-serif;
+}
+
 h1 {
-    font-family: Montserrat;
     font-size: 64px;
     font-weight: 700;
 }
 
+h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
 h3 {
-    font-family: Montserrat;
     font-size: 32px;
     font-weight: 700;
 }
@@ -25,6 +39,7 @@ p {
 }
 
 button {
+    width: 247px;
     color: $btn-text-color;
     font-family: Montserrat;
     font-size: 24px;
@@ -44,17 +59,17 @@ a {
     padding-right: calc(50% - 600px);
 }
 
+.img {
+    position: absolute;
+}
+
 .top {
     background-color: $header-background-color;
 
-    &__img {
-        position: absolute;
-    }
-    
     &_bg-star-1 {
         right: 0;
     }
-    
+
     &_bg-star-2 {
         top: 568px;
         right: 344px;
@@ -69,7 +84,7 @@ a {
         top: 69px;
         left: 156px;
     }
-    
+
     &_bg-star-5 {
         top: 94px;
         left: 63px;
@@ -132,16 +147,32 @@ a {
 
 .main {
     padding-top: 94px;
+    padding-bottom: 144px;
     background-color: $main-background-color;
-    background-image: 
-        url("../img/stars/main-star-1.svg"), 
-        url("../img/stars/main-star-2.svg"),
+    background-image: url("../img/stars/main-star-1.svg"), url("../img/stars/main-star-2.svg"),
         url("../img/stars/main-star-3.svg");
     background-repeat: no-repeat;
     background-position:
         100% 110px,
         27.97px 770px,
         45.18px 822px;
+
+    &_bg-star-1 {
+        top: 2363px;
+        right: 160px;
+    }
+    &_bg-star-2 {
+        top: 2396px;
+        right: 80px;
+    }
+    &_bg-star-3 {
+        top: 5636px;
+        right: 90px;
+    }
+    &_bg-star-4 {
+        top: 5684px;
+        right: 200px;
+    }
 }
 
 .description {
@@ -166,14 +197,13 @@ a {
 
     .about__item {
         position: relative;
-        height: 100%;
         grid-column: span 4;
         border-radius: 30px;
-        background-color: #fff;
+        background-color: $main-article-item-bgc;
     }
 }
 
-.img-conteiner::before {
+.img-container::before {
     content: "✊";
     position: absolute;
     top: 21%; //115
@@ -206,5 +236,52 @@ a {
     }
 }
 
+.mini-game {
+    margin-top: 96px;
+
+    .mini-game__title {
+        color: #fff;
+        margin-bottom: 72px;
+    }
+}
+
+.mini-game__content-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 32px;
+}
+
+.mini-game__item {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    height: 500px;
+    border-radius: 48px;
+    background-color: $main-article-item-bgc;
+}
+
+.mini-game__item:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.mini-game_description {
+    text-align: start;
+    padding: 48px;
+
+    .mini-game__name {
+        margin-bottom: 24px;
+    }
+
+    .mini-game__text {
+        max-width: 457px;
+        margin-bottom: 36px;
+    }
+}
+
+.footer {
+    padding: 60px 0;
+    text-align: center;
+    background-color: $footer-backround-color;
+}
 
 @import "mobile";
