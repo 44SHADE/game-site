@@ -38,7 +38,7 @@ p {
     line-height: 32px; /* 133.333% */
 }
 
-button {
+.button {
     width: 247px;
     color: $btn-text-color;
     font-family: Montserrat;
@@ -132,9 +132,11 @@ a {
         text-shadow: $header-shadow-elem;
     }
 
-    .header__btn {
-        width: 247px;
+    .header-button_style {
+        display: inline-block;
+        text-align: center;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
     }
 }
 
@@ -143,6 +145,16 @@ a {
     z-index: 1;
     padding: 27px 49px;
     background-color: $header-carousel-color;
+}
+
+//delete plug
+.carousel__plug {
+    color: #202027;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 110%; /* 33px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
 .main {
@@ -157,19 +169,19 @@ a {
         27.97px 770px,
         45.18px 822px;
 
-    &_bg-star-1 {
+    &__bg-star-1 {
         top: 2363px;
         right: 160px;
     }
-    &_bg-star-2 {
+    &__bg-star-2 {
         top: 2396px;
         right: 80px;
     }
-    &_bg-star-3 {
+    &__bg-star-3 {
         top: 5636px;
         right: 90px;
     }
-    &_bg-star-4 {
+    &__bg-star-4 {
         top: 5684px;
         right: 200px;
     }
@@ -179,13 +191,15 @@ a {
     margin-bottom: 72px;
 
     .about__title {
+        font-size: 64px;
+        font-weight: 700;
         color: $h1-color-main;
         margin-bottom: 24px;
     }
 
     .about__text {
         max-width: 788px;
-        font-weight: 300;
+        font-weight: 400;
         color: $paragraph-color-main;
     }
 }
@@ -195,9 +209,14 @@ a {
     grid-template-columns: repeat(12, 1fr);
     gap: 32px;
 
+    .about__item-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
     .about__item {
         position: relative;
-        grid-column: span 4;
         border-radius: 30px;
         background-color: $main-article-item-bgc;
     }
@@ -240,6 +259,8 @@ a {
     margin-top: 96px;
 
     .mini-game__title {
+        font-size: 64px;
+        font-weight: 700;
         color: #fff;
         margin-bottom: 72px;
     }
@@ -264,7 +285,7 @@ a {
     flex-direction: row-reverse;
 }
 
-.mini-game_description {
+.mini-game__description {
     text-align: start;
     padding: 48px;
 
@@ -273,9 +294,38 @@ a {
     }
 
     .mini-game__text {
-        max-width: 457px;
         margin-bottom: 36px;
     }
+
+    .mini-game_text-w-457 {
+        width: 447px;
+    }
+
+    .mini-game_text-w-476 {
+        width: 476px;
+    }
+
+    .mini-game_text-w-382 {
+        width: 382px;
+    }
+
+    .mini-game_text-w-497 {
+        width: 497px;
+    }
+}
+
+.mini-game_descr-padding {
+    padding-right: 77px;
+}
+
+.img__mini {
+    width: 600px;
+    height: 100%;
+}
+
+.img__mini_size {
+    width: 100%;
+    height: 100%;
 }
 
 .footer {
