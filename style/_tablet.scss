@@ -1,0 +1,42 @@
+@import "vars";
+
+@media (max-width: 1024px) {
+    //DELETE
+    .mini-game {
+        display: none;
+    }
+    
+    .top_bg-vector-2 {
+        display: none;
+    }
+
+    .center {
+        padding-left: calc(50% - (769px / 2));
+        padding-right: calc(50% - (769px / 2));
+    }
+
+    .about__content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .about__item-wrapper {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .about__item {
+            width: 50%;
+        }
+    }
+
+    .item__img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 833px) {
+    .center {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

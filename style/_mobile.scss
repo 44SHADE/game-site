@@ -1,11 +1,18 @@
 @import "vars";
 
 @media (max-width: 767px) {
+    //DELETE
+    .mini-game {
+        display: block;
+    }
     @for $i from 1 through 5 {
         .top_bg-star-#{$i} {
             display: none;
         }
         .top_bg-vector-#{$i} {
+            display: none;
+        }
+        .main__bg-star-#{$i} {
             display: none;
         }
     }
@@ -15,32 +22,45 @@
         padding-right: 17px;
     }
 
+    .button {
+        padding: 10px 28px;
+        font-size: 16px;
+        width: 285px;
+    }
+
     .top {
-        &_bg-star-mob-1{
+        .top_bg-star-mob_none {
+            display: block;
+        }
+
+        &_bg-star-mob-1 {
             right: 0;
         }
-        &_bg-star-mob-2{
+        &_bg-star-mob-2 {
             top: 580px;
             right: 34px;
         }
-        &_bg-star-mob-3{
+        &_bg-star-mob-3 {
             top: 557px;
             right: 86px;
         }
-        &_bg-star-mob-4{
+        &_bg-star-mob-4 {
             top: 64px;
             left: 92px;
         }
-        &_bg-star-mob-5{
+        &_bg-star-mob-5 {
             top: 97px;
             left: 38px;
         }
     }
 
     .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         padding-top: 147px;
-        padding-bottom: 131px;
+        padding-bottom: 138px;
 
         .header__title {
             font-size: 40px;
@@ -49,15 +69,14 @@
         }
 
         .header__text {
+            width: 296px;
             margin-bottom: 36px;
             font-size: 16px;
             line-height: $mobile-line-height;
             text-shadow: none;
         }
 
-        .header__btn {
-            width: 285px;
-            font-size: 16px;
+        .header-button_mobile {
             box-shadow: none;
         }
     }
@@ -68,6 +87,87 @@
 
     .carousel {
         padding: 16px 24px;
+
+        .carousel__plug {
+            font-size: 16px;
+            letter-spacing: 0.64px;
+        }
+    }
+
+    .main {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background-image: none;
+    }
+
+    .mini-game {
+        margin-top: 0;
+
+        .mini-game__title {
+            margin-bottom: 48px;
+            font-size: 40px;
+        }
+    }
+
+    .mini-game__content-wrapper {
+        flex-flow: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .mini-game__item {
+        width: 343px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mini-game__item:nth-child(n) {
+        flex-direction: column-reverse;
+    }
+
+    @each $size in $mobile-height-mini-game-size {
+        .mini-game_mobile_h-#{$size} {
+            height: $size;
+        }
+    }
+
+    .mini-game__description {
+        display: flex;
+        flex-direction: column;
+
+        padding: 29px 29px 32px 29px;
+
+        .mini-game__name {
+            margin-bottom: 16px;
+            font-size: 32px;
+            line-height: normal;
+        }
+
+        .mini-game__text {
+            width: auto;
+            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: normal;
+        }
+    }
+
+    .mini-game__mobile-img_height {
+        height: 285px;
+    }
+
+    .button_mobile {
+        box-sizing: content-box;
+        border: 1px;
+        width: 229px;
+    }
+
+    .footer {
+        padding: 40px 92px;
+
+        .footer__text {
+            font-size: 16px;
+            line-height: normal;
+        }
     }
 }
-
