@@ -47,9 +47,8 @@ const monthDays = 31;
 const friday = 3;
 const week = 7;
 
-for(let i = friday; i <= monthDays;) {
+for(let i = friday; i <= monthDays; i + week) {
     console.log(`Сегодня пятница, ${i}-е число. Необходимо подготовить отчет.`);
-    i += week;
 }
 
 
