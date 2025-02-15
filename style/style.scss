@@ -44,6 +44,12 @@ p {
     padding: 16px 28px;
 }
 
+.button:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+}
+
 a {
     text-decoration: none;
 }
@@ -133,6 +139,7 @@ a {
     .header-button_style {
         display: inline-block;
         text-align: center;
+        border: 1px solid #000;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         box-sizing: border-box;
     }
