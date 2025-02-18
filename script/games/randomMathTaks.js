@@ -2,10 +2,17 @@ import { generateRandomNum, promptQuestion } from "./utils.js";
 
 const randomMathBtn = document.querySelector(".button__randomMath");
 
-const easy = 10;
-const medium = 30;
-const hard = 50;
-const death = 100;
+// const easy = 10;
+// const medium = 30;
+// const hard = 50;
+// const death = 100;
+
+const levels = {
+    "easy": 10,
+    "medium": 30,
+    "hard": 50,
+    "death": 100,
+}
 
 const signsMap = {
   0: "+",
@@ -69,7 +76,7 @@ const gameProgressQuestion = (examplesAndAnswersObj) => {
   const answers = examplesAndAnswersObj.answerArr.join(" |xx| ");
   const examples = examplesAndAnswersObj.exampleStringArr.join("\n");
 
-  const answersToTheExamples = promptQuestion(`Решите эти примеры:\n${examples}\n\nОтветы впишите через ПРОБЕЛ.`);
+  const answersToTheExamples = promptQuestion(`Решите эти примеры (Ответы впишите через ПРОБЕЛ):\n${examples}`);
   const answersToTheExamplesPretty = answersToTheExamples.split(" ").join(" |xx| ");
 
   return alert(
@@ -94,27 +101,13 @@ const init = () => {
   if (!examplesCount) return alert("Нет - нет - нет! Впиши кол-во примеров!");
 
   const levelValid = level.trim().split(" ").join("").toLowerCase();
-  let examplesObj;
 
-  switch (levelValid) {
-    case "easy":
-      examplesObj = generateMultipleExamples(generateExample, easy, examplesCount);
-      gameProgressQuestion(examplesObj);
-      break;
-    case "medium":
-      examplesObj = generateMultipleExamples(generateExample, medium, examplesCount);
-      gameProgressQuestion(examplesObj);
-      break;
-    case "hard":
-      examplesObj = generateMultipleExamples(generateExample, hard, examplesCount);
-      gameProgressQuestion(examplesObj);
-      break;
-    case "death":
-      examplesObj = generateMultipleExamples(generateExample, death, examplesCount);
-      gameProgressQuestion(examplesObj);
-      break;
-    default:
-      alert(
+  if(levelValid === "easy" || "medium" || "hard" || "death") {
+    const lvl = levels[levelValid];
+    const examplesObj = generateMultipleExamples(generateExample, lvl, examplesCount);
+    gameProgressQuestion(examplesObj);
+  } else {
+    return alert(
         "Введите сложность без цифр и дополнительных символов!\nПример: easy -> press 'OK'"
       );
   }
