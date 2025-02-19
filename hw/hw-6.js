@@ -54,7 +54,7 @@ console.log(sorted);
 console.log("-----------ex7");
 const arr7 = [9, 8, 7, 6, 5];
 const num = +prompt("Угадай число от 1 до 10");
-const answer = arr7.find((el) => el === num);
+const answer = arr7.includes(num);
 if (answer) {
   alert("Угадал");
 } else {
@@ -132,7 +132,7 @@ for (let i = 0; i < 6; i++) {
 
 const len = arr15.length;
 const sum = arr15.reduce((num, acc) => num + acc);
-const mid = sum / 15;
+const mid = sum / len;
 console.log(mid);
 
 

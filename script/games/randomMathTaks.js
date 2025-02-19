@@ -2,11 +2,6 @@ import { generateRandomNum, promptQuestion } from "./utils.js";
 
 const randomMathBtn = document.querySelector(".button__randomMath");
 
-// const easy = 10;
-// const medium = 30;
-// const hard = 50;
-// const death = 100;
-
 const levels = {
     "easy": 10,
     "medium": 30,
@@ -57,10 +52,6 @@ const generateExample = (complexityExample) => {
 const generateMultipleExamples = (fn, complexityExample, countExamples) => {
     const exampleStringArr = [];
     const answerArr = [];
-    console.log(
-      typeof complexityExample + `: ${complexityExample}`,
-      typeof countExamples + `: ${countExamples}`
-    );
   
     for (let i = 0; i < countExamples; i++) {
       const ex = fn(complexityExample);
