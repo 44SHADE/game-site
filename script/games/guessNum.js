@@ -1,12 +1,8 @@
+import { generateRandomNum, promptQuestion } from "./utils.js";
+
 const guessNumGameBtn = document.querySelector(".button__randomNum");
 
 const range = 100;
-
-const generateRandomNum = (range) => Math.floor(Math.random() * range + 1);
-
-function promptQuestion () {
-    return Number(prompt("Выберите число в диапазоне от 1 до 100 и начните игру!"));
-}
 
 function guessNum(num, result) {
   if (result > 100 || result < 1) {
@@ -20,9 +16,9 @@ function guessNum(num, result) {
   }
 
   if (result > num) {
-    result = Number(prompt("Хм... ваше число БОЛЬШЕ! Попробуйте еще раз!"))
+    result = Number(promptQuestion("Хм... ваше число БОЛЬШЕ! Попробуйте еще раз!"))
   } else {
-    result = Number(prompt("Хм... ваше число МЕНЬШЕ! Попробуйте еще раз!"))
+    result = Number(promptQuestion("Хм... ваше число МЕНЬШЕ! Попробуйте еще раз!"))
   }
 
   return guessNum(num, result);
@@ -30,8 +26,7 @@ function guessNum(num, result) {
 
 const init = () => {
     const num = generateRandomNum(range);
-    const result = promptQuestion();
-    console.log(num);
+    const result = Number(promptQuestion("Выберите число в диапазоне от 1 до 100 и начните игру!"));
     
     return guessNum(num, result);
 }
