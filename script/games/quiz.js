@@ -1,13 +1,12 @@
 import { quiz } from "../common/quizQuestions.js";
+import { promptQuestion } from "../common/utils.js";
 
 const quizBtn = document.querySelector(".button__quiz");
-
 const quizLen = quiz.length;
 
 const getQuestion = () => {
     const randomIndex = Math.floor(Math.random() * quizLen);
     const questionObj = quiz[randomIndex];
-
     return questionObj;
 };
 
@@ -30,18 +29,13 @@ const init = () => {
     alert("Это квиз! Тебе дадут 3 вопроса, а ты попытайся ответить. Удачи!");
 
     const questions = randomThreeQuestion();
-
     questions.forEach((el) => {
         const answers = el.options.join("\n");
         const correctAnswer = el.correctAnswer;
 
-        const answer = +prompt(`${el.text}\n\n${answers}`);
+        const answer = +promptQuestion(`${el.text}\n\n${answers}`);
 
-        if(answer === correctAnswer) {
-            alert("Верный ответ!")
-        } else {
-            alert("Ты ошибся!")
-        }
+        answer === correctAnswer ? alert("Верный ответ!") : alert("Ты ошибся!");
     })
 }
 
