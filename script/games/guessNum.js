@@ -1,4 +1,4 @@
-import { generateRandomNum, promptQuestion } from "./utils.js";
+import { generateRandomNum, promptQuestion } from "../common/utils.js";
 
 const guessNumGameBtn = document.querySelector(".button__randomNum");
 
