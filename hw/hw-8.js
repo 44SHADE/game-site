@@ -81,3 +81,10 @@ function sayHi(name) {
 
 // Нужно изменить код ниже:
 delayForSecond(() => sayHi("Глеб (ex5)"));
+
+
+const div = (base, n) => (n / base);
+const createDiv = (fn, base) => (n) => fn(base, n);
+
+const div10 = createDiv(div, 10);
+console.log("devision on 10: " + div10(100));
