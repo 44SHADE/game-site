@@ -146,14 +146,37 @@ a {
 }
 
 .carousel {
-    position: relative;
     z-index: 1;
-    padding: 27px 49px;
+    position: relative;
+    padding: 27px 0;
     background-color: $header-carousel-color;
+    overflow-x: hidden;
 }
 
-//delete plug
-.carousel__plug {
+.carousel__wrapper {
+    display: flex;
+    // width: max-content;
+    width: 3174px;
+}
+
+.carousel__animation {
+    display: flex;
+    gap: 51px;
+    flex: 0 0 auto;
+    min-width: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel__item {
     color: #202027;
     font-size: 30px;
     font-weight: 700;
