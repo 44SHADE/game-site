@@ -14,19 +14,31 @@ const init = () => {
     const userChoice = +promptQuestion("1. КАМЕНЬ || 2. НОЖНИЦЫ || 3. БУМАГА");
     const programChoice = Math.floor(Math.random() * 3 + 1);
 
-    if(isNaN(userChoice)) alert("Нужно выбрать цифру для продолжения.");
-    if(userChoice < 1 || userChoice > 3) alert("Выбранное число меньше/больше представленных.");
+    if(isNaN(userChoice) || !userChoice) {
+        alert("Нужно выбрать цифру для продолжения.");
+        return;
+    };
 
-    let resultMsg = `User: ${rspMap[userChoice]} ||| Computer: ${rspMap[programChoice]}`;
+    if(userChoice < 1 || userChoice > 3) {
+        alert("Выбранное число меньше/больше представленных.");
+        return;
+    };
+
+    let resultMsg = `User: ${rspMap[userChoice]}\nComputer: ${rspMap[programChoice]}`;
     
-    if(userChoice === programChoice) alert(`${resultMsg}\n\nЭто ничья !`);
+    if(userChoice === programChoice) {
+        alert(`${resultMsg}`);
+        alert(`Это ничья !`);
+    };
     if(userChoice === 1 && programChoice === 2 ||
         userChoice === 2 && programChoice === 3 ||
         userChoice === 3 && programChoice === 1 
     ) {
-        alert(`${resultMsg}\n\nВЫ ПОБЕДИЛИ`);
+        alert(`${resultMsg}`);
+        alert(`ВЫ ПОБЕДИЛИ`);
     } else {
-        alert(`${resultMsg}\n\nВЫ ПРОИГРАЛИ`);
+        alert(`${resultMsg}`);
+        alert(`ВЫ ПРОИГРАЛИ`);
     }
 }
 

@@ -8,6 +8,7 @@ const reverseText = (text) => {
 
 const init = () => {
   const text = promptQuestion("Введите любой текст...");
+  if(!text) return 0;
   const reversedText = reverseText(text);
   alert(reversedText);
 };
